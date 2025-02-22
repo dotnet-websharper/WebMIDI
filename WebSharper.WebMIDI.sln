@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.WebMIDI", "WebSharper.WebMIDI\WebSharper.WebMIDI.fsproj", "{9B8C8CC9-8CB9-4991-ADE8-31BB0EB068CF}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.WebMIDI.Sample", "WebSharper.WebMIDI.Sample\WebSharper.WebMIDI.Sample.fsproj", "{EE931CC1-C4E4-425E-B4CF-A510A000433B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9B8C8CC9-8CB9-4991-ADE8-31BB0EB068CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B8C8CC9-8CB9-4991-ADE8-31BB0EB068CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B8C8CC9-8CB9-4991-ADE8-31BB0EB068CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE931CC1-C4E4-425E-B4CF-A510A000433B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE931CC1-C4E4-425E-B4CF-A510A000433B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE931CC1-C4E4-425E-B4CF-A510A000433B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE931CC1-C4E4-425E-B4CF-A510A000433B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

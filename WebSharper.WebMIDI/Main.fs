@@ -41,19 +41,46 @@ module Definition =
             "open" => T<unit> ^-> T<Promise<unit>> 
             "close" => T<unit> ^-> T<Promise<unit>> 
         ]
+
+    let MIDIMessageEventInit =
+        Pattern.Config "MIDIMessageEventInit" {
+            Required = [
+                "data", T<Uint8Array> 
+            ]
+            Optional = []
+        }
+            
+    let MIDIMessageEvent =
+        Class "MIDIMessageEvent"
+        |=> Inherits T<Dom.Event>
+        |+> Static [
+            Constructor (T<string>?``type`` * !?MIDIMessageEventInit?options) 
+        ]
+        |+> Instance [
+            "data" =? T<Uint8Array> 
+        ]
     
     let MIDIInput =
         Class "MIDIInput"
         |=> Inherits MIDIPort
         
     let MIDIInputMap = 
+        let forEachCallbackfn = MIDIInput?value * !?T<string>?key * !?TSelf?parent ^-> T<unit>
+        let onmidimessageCallback = MIDIMessageEvent?message ^-> T<unit>
+
         Class "MIDIInputMap"
-        |=> Inherits T<Map<string, obj>> 
+        |=> Inherits T<Map<string, obj>>  
         |+> Instance [
             "size" =? T<int>
-            "get" => T<string> ^-> MIDIInput
-            "has" => T<string> ^-> T<bool>
-            "forEach" => (T<Function> ^-> T<unit>)
+
+            "entries" => T<unit> ^-> T<obj>
+            "get" => T<string>?key ^-> MIDIInput
+            "has" => T<string>?key ^-> T<bool>
+            "keys" => T<unit> ^-> T<obj>
+            "values" => T<unit> ^-> T<obj>
+            "forEach" => (forEachCallbackfn?callbackfn * !?T<obj>?thisArg ^-> T<unit>)
+
+            "onmidimessage" => onmidimessageCallback?callbackfn ^-> T<unit>
         ]
 
     let MIDIOutput =
@@ -65,13 +92,19 @@ module Definition =
         ]
     
     let MIDIOutputMap = 
+        let forEachCallbackfn = MIDIInput?value * !?T<string>?key * !?TSelf?parent ^-> T<unit>
+
         Class "MIDIOutputMap"
         |=> Inherits T<Map<string, obj>> 
         |+> Instance [
             "size" =? T<int>
-            "get" => T<string> ^-> MIDIOutput
-            "has" => T<string> ^-> T<bool>
-            "forEach" => (T<Function> ^-> T<unit>)
+
+            "entries" => T<unit> ^-> T<obj>
+            "get" => T<string>?key ^-> MIDIOutput
+            "has" => T<string>?key ^-> T<bool>
+            "keys" => T<unit> ^-> T<obj>
+            "values" => T<unit> ^-> T<obj>
+            "forEach" => (forEachCallbackfn?callbackfn * !?T<obj>?thisArg ^-> T<unit>)
         ]
     
     let MIDIAccess =
@@ -103,24 +136,6 @@ module Definition =
         ] 
         |+> Instance [
             "port" =? MIDIPort 
-        ]
-
-    let MIDIMessageEventInit =
-        Pattern.Config "MIDIMessageEventInit" {
-            Required = [
-                "data", T<Uint8Array> 
-            ]
-            Optional = []
-        }
-            
-    let MIDIMessageEvent =
-        Class "MIDIMessageEvent"
-        |=> Inherits T<Dom.Event>
-        |+> Static [
-            Constructor (T<string>?``type`` * !?MIDIMessageEventInit?options) 
-        ]
-        |+> Instance [
-            "data" =? T<Uint8Array> 
         ]
 
     let MIDIOptions = 
