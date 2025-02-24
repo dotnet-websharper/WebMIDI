@@ -63,10 +63,12 @@ module Definition =
     let MIDIInput =
         Class "MIDIInput"
         |=> Inherits MIDIPort
+        |+> Instance [
+            "onmidimessage" =@ MIDIMessageEvent ^-> T<unit>
+        ]
         
     let MIDIInputMap = 
         let forEachCallbackfn = MIDIInput?value * !?T<string>?key * !?TSelf?parent ^-> T<unit>
-        let onmidimessageCallback = MIDIMessageEvent?message ^-> T<unit>
 
         Class "MIDIInputMap"
         |=> Inherits T<Map<string, obj>>  
@@ -79,8 +81,6 @@ module Definition =
             "keys" => T<unit> ^-> T<obj>
             "values" => T<unit> ^-> T<obj>
             "forEach" => (forEachCallbackfn?callbackfn * !?T<obj>?thisArg ^-> T<unit>)
-
-            "onmidimessage" => onmidimessageCallback?callbackfn ^-> T<unit>
         ]
 
     let MIDIOutput =
