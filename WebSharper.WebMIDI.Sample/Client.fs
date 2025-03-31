@@ -27,7 +27,7 @@ module Client =
     let connectMIDI () =
         promise {
             try 
-                let! midiAccess = As<Navigator>(JS.Window.Navigator).RequestMIDIAccess()
+                let! midiAccess = JS.Window.Navigator.RequestMIDIAccess()
                 statusMessage := "MIDI Access Granted!"
 
                 midiAccess.Inputs.ForEach(fun (input: MIDIInput) ->

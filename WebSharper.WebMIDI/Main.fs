@@ -147,16 +147,9 @@ module Definition =
             Optional = []
         }
 
-    let Navigator =
-        Class "Navigator"
-        |+> Instance [
-            "requestMIDIAccess" =>  !?MIDIOptions?MIDIOptions ^-> T<Promise<_>>[MIDIAccess]
-        ]
-
     let Assembly =
         Assembly [
             Namespace "WebSharper.WebMIDI" [
-                Navigator
                 MIDIOptions
                 MIDIMessageEvent
                 MIDIMessageEventInit
