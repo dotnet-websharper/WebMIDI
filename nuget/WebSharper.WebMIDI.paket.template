@@ -1,0 +1,22 @@
+type file
+id WebSharper.WebMIDI
+authors
+    IntelliFactory
+owners
+    IntelliFactory
+repositoryType git
+repositoryUrl https://github.com/dotnet-websharper/webmidi/
+licenseUrl https://github.com/dotnet-websharper/webmidi/blob/master/LICENSE.md
+iconUrl https://github.com/dotnet-websharper/core/raw/websharper50/tools/WebSharper.png
+projectUrl https://github.com/dotnet-websharper/webmidi
+description
+    WebSharper bindings for the WebMIDI API
+tags
+    Web JavaScript F# C#
+files
+    ../WebSharper.WebMIDI/bin/Release/netstandard2.0/WebSharper.WebMIDI.dll ==> lib/netstandard2.0
+    ../WebSharper.WebMIDI/bin/Release/netstandard2.0/WebSharper.WebMIDI.xml ==> lib/netstandard2.0
+    ../WebSharper.WebMIDI.Extensions/bin/Release/netstandard2.0/WebSharper.WebMIDI.Extensions.dll ==> lib/netstandard2.0
+    ../WebSharper.WebMIDI.Extensions/bin/Release/netstandard2.0/WebSharper.WebMIDI.Extensions.xml ==> lib/netstandard2.0
+dependencies
+        WebSharper ~> LOCKEDVERSION:[3]

@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{6E0E8703-9B5E-49E0-BA0E-59CB607DE6D4}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.WebMIDI", "WebSharper.WebMIDI\WebSharper.WebMIDI.fsproj", "{9B8C8CC9-8CB9-4991-ADE8-31BB0EB068CF}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.WebMIDI.Sample", "WebSharper.WebMIDI.Sample\WebSharper.WebMIDI.Sample.fsproj", "{EE931CC1-C4E4-425E-B4CF-A510A000433B}"
