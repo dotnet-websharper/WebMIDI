@@ -15,8 +15,10 @@ tags
     Web JavaScript F# C#
 files
     ../WebSharper.WebMIDI/bin/Release/netstandard2.0/WebSharper.WebMIDI.dll ==> lib/netstandard2.0
+    ../WebSharper.WebMIDI/bin/Release/netstandard2.0/WebSharper.WebMIDI.websharper ==> lib/netstandard2.0
     ../WebSharper.WebMIDI/bin/Release/netstandard2.0/WebSharper.WebMIDI.xml ==> lib/netstandard2.0
     ../WebSharper.WebMIDI.Extensions/bin/Release/netstandard2.0/WebSharper.WebMIDI.Extensions.dll ==> lib/netstandard2.0
+    ../WebSharper.WebMIDI.Extensions/bin/Release/netstandard2.0/WebSharper.WebMIDI.Extensions.websharper ==> lib/netstandard2.0
     ../WebSharper.WebMIDI.Extensions/bin/Release/netstandard2.0/WebSharper.WebMIDI.Extensions.xml ==> lib/netstandard2.0
 dependencies
         WebSharper ~> LOCKEDVERSION:[3]
